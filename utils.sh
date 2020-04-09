@@ -7,7 +7,7 @@
 # OUT_FILE:      Name of the output lua file
 # BUILD_DIR:     Directory for the build files
 
-SOURCE_FILES=(player.fnl main.fnl)
+SOURCE_FILES=(utils.fnl main.fnl)
 SOURCE_DIR=source
 OUT_FILE=game.lua
 BUILD_DIR=build

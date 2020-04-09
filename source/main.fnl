@@ -1,14 +1,3 @@
-(fn load-palette [str]
-  (for [i 0 15 1]
-    (poke (+ 0x03FC0 (* i 3))
-          (tonumber (string.sub str (+ (* i 6) 1) (+ (* i 6) 2)) 16))
-
-    (poke (+ 0x03FC0 (* i 3) 1)
-          (tonumber (string.sub str (+ (* i 6) 3) (+ (* i 6) 4)) 16))
-
-    (poke (+ 0x03FC0 (* i 3) 2)
-          (tonumber (string.sub str (+ (* i 6) 5) (+ (* i 6) 6)) 16))))
-
 (fn init []
   (global solids { 1 true 3 true })
   (global p { :x 120 :y 68 :vx 0 :vy 0 })
