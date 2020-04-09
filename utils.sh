@@ -37,22 +37,45 @@ run()
   tic80 $BUILD_DIR/$OUT_FILE
 }
 
+# Prints usage instructions
+# -------------------------
+usage()
+{
+  echo "
+FENNEL UTILS
+
+Created by Stefan Devai <https://github.com/stefandevai>
+
+USAGE: ./utils.sh [command]
+
+COMMANDS:
+  -c, --compile    Compile fennel source files in ./source
+  -r, --run        Run compiled file with TIC-80
+  -h, --help       Show this prompt
+"
+}
+
 # Parses command line arguments:
 # ------------------------------
 # -c, --compile: compile source files
 # -r, --run:     run compiled file with tic80
 
-while [ "$1" != "" ]; do
-  case $1 in
-    -c | --compile )
-      compile
-      ;;
-    -r | --run )
-      run
-      ;;
-    * )
-      exit 1
-  esac
-  shift
-done
+if [ "$#" -gt 0 ]; then
+  while [ "$1" != "" ]; do
+    case $1 in
+      -c | --compile )
+        compile
+        ;;
+      -r | --run )
+        run
+        ;;
+      * )
+        usage
+        exit 1
+    esac
+    shift
+  done
+else
+  usage
+fi
 
