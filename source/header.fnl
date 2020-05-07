@@ -1,3 +1,9 @@
+;; title:   my game
+;; author:  me
+;; desc:    a game that uses TIC-80
+;; script:  fennel
+;; license: GNU GPL v3 or later
+
 ;; Loads custom palette using a string. See <https://github.com/nesbox/TIC-80/wiki/palette> for more information.
 (fn load-palette [str]
   (for [i 0 15 1]
